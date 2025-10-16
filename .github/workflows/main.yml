@@ -17,5 +17,8 @@ jobs:
           host: ${{ secrets.SERVER_HOST }}
           username: gitdeploy
           key: ${{ secrets.SERVER_SSH_KEY }}
+          port: ${{ secrets.SERVER_PORT }}
           script: |
+            echo "Deploying WordPress as $(whoami) on $(hostname)"
             /home/gitdeploy/deploy.sh
+            echo "Deployment completed successfully."
